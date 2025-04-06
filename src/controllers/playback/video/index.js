@@ -1129,13 +1129,13 @@ export default function (view) {
         /**
             * Only show option if:
             * - player has support
-            * - has more than 1 subtitle track
+            * - has more than 2 subtitle track (including off)
             * - has valid secondary tracks
             * - primary subtitle is not off
             * - primary subtitle has support
             */
         const currentTrackCanAddSecondarySubtitle = playbackManager.playerHasSecondarySubtitleSupport(player)
-                && streams.length > 1
+                && streams.length > 2
                 && secondaryStreams.length > 0
                 && currentIndex !== -1
                 && playbackManager.trackHasSecondarySubtitleSupport(playbackManager.getSubtitleStream(player, currentIndex), player);
